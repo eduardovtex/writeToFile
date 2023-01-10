@@ -25,14 +25,15 @@ Dentro del archivo coleccion.json es donde Newman lee el endpoint que va a ser l
 ```
 	"request": {
 	"_comment":"Aqui va el método y la URL de VTEX que se utiliza, ademas las credenciales en el header",
-	"method": "GET",
-		"header": [
-		"Accept: application/vnd.vtex.pricing.v3+json",
-		"Content-Type: application/json",
-    "X-VTEX-API-AppKey: ",
-		"X-VTEX-API-AppToken: "
-		],
-		"url": "https://api.vtex.com/{{accountName}}/pricing/prices/{{skuID}}/computed/{{priceTableId}}" 
+	"method": 
+	"GET",
+	"header": [
+	"Accept: application/vnd.vtex.pricing.v3+json",
+	"Content-Type: application/json",
+        "X-VTEX-API-AppKey: ",
+	"X-VTEX-API-AppToken: "
+	],
+	"url": "https://api.vtex.com/{{accountName}}/pricing/prices/{{skuID}}/computed/{{priceTableId}}" 
 }
 ```
 
@@ -47,7 +48,36 @@ Para este caso en particular, se ocupó el endpoint "Get Computed Price by price
 ### data.csv
 
 1. Este archivo es el encargado de agregar la recursividad al runner, de él se extrae la información del punto 2
-2. La estructura puede cambiar, dependiendo de la `url` que se utilice, no se limita solamente al ejemplo del endpoint.
-3. El CSV debe estar separado por `,` y no `;`
+2. La estructura puede cambiar, dependiendo de la `url` que se utilice, no se limita solamente al ejemplo del endpoint. 😉
+3. El CSV debe estar separado por `,` y no `;` ⚠️
+
+
+Ejemplo de un archivo
+
+<img width="328" alt="Captura de Pantalla 2023-01-10 a la(s) 13 02 01" src="https://user-images.githubusercontent.com/66963962/211601000-a28c6963-e13b-481f-bb4c-8a7d11d910d7.png">
+
+### writeToFile.js
+
+Y bueno llegamos al archivo que hace la mágia y junta el JSON con el CSV para poder enviar la información.
+No daré muchos detalles ya que el mismo archivo tiene los comentarios 😅
+
+
+
+### Links de referencia
+
+Para poder lograr hacer este script ocupé algunos links que pueden ser útiles por si se quieren hacer otras cosas entretenidas!
+
+![Imagen](https://media3.giphy.com/media/idFxmiV2dayJEqzXaW/giphy.gif?cid=6104955exsvktnbhiwk7rx82jozhlqrnft0s5psjvto7tijh&rid=giphy.gif&ct=g)
+
+https://kavindra-lunuwilage.medium.com/saving-postman-test-results-to-a-csv-file-using-newman-a24512471189
+https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/
+https://github.com/postmanlabs/newman
+https://stackoverflow.com/questions/59106075/load-csv-from-newman-using-nodejs
+
+### Creado por Eduardo Fuentes - VTEX 2023 
+![Imagen](https://media3.giphy.com/media/s2qXK8wAvkHTO/giphy.gif?cid=6104955eu8ft8or076x9f165da8cn4gnvgzx0jas2al040ix&rid=giphy.gif&ct=g)
+
+
+
 
 
