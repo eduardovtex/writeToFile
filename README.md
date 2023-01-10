@@ -1,8 +1,8 @@
 # writeToFile
 
-## Este script se creó para utilizar Postman para capturar la información de las API's de VTEX
+### Este script se creó para utilizar Postman para capturar la información de las API's de VTEX
 
-Se utiliza la librería Newman y NodeJS para lograr el objetivo, ya que Postman por su diseño, no permite guardar la respuesta de las consultas.
+Se utilizó la librería Newman y NodeJS para lograr el objetivo, ya que Postman por su diseño, no permite guardar la respuesta de las consultas.
 
 Aqui les dejo un pequeño tutorial de que hace el archivo ❤️
 
