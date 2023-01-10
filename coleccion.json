@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "cb2512f0-1e26-48e1-ad6d-26ddda278c72",
+		"name": "Write response to file",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get computed prices",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "77bcfcd7-12d5-4ed0-94ea-0a1b7e1a9b53",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"/*",
+							"const fs = require('fs');",
+							"",
+							"fs.writeFile('response.txt', pm.response.text(), function (error) {",
+							"   if (error) { ",
+							"        console.error(error); ",
+							"   }",
+							"});",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"_comment":"Aqui va el método y la URL de VTEX que se utiliza, ademas las credenciales en el header",
+				"method": "GET",
+				"header": [
+				"Accept: application/vnd.vtex.pricing.v3+json",
+				"Content-Type: application/json",
+                "VtexIdclientAutCookie: ",
+				"X-VTEX-API-AppKey: ",
+				"X-VTEX-API-AppToken: "
+				],
+				"url": "https://api.vtex.com/{{accountName}}/pricing/prices/{{skuID}}/computed/{{priceTableId}}" 
+				}
+		}
+
+	],
+	"protocolProfileBehavior": {}
+}
